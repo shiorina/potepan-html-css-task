@@ -1,105 +1,182 @@
+body {
+  margin: 0;
+}
+
 .header {
   width: 100%;
   background-color: #fff;
+  box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.05);
+  font-family:
+    "YuGothic",
+    "Yu Gothic",
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    sans-serif;
 }
 
-.header-inner {
+.header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 30px;
 }
 
-.header-logo img {
+.header__logo img {
   width: 165px;
 }
 
-.header-nav {
+.header__nav {
   display: flex;
   align-items: center;
   gap: 40px;
 }
 
-.header-list {
+.header__list {
   display: flex;
   align-items: center;
   gap: 40px;
   list-style: none;
   margin: 0;
   padding: 0;
-  justify-content: space-between;
 }
 
-.header-item a {
+.header__item a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-decoration: none;
   color: #333;
-}
-
-.header-item span {
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.header-item small {
-  margin-top: 3px;
-  font-size: 10px;
+  text-decoration: none;
   white-space: nowrap;
 }
 
-.header-btn {
-    align-items: center;
-    background-color: #F79214;
-    border: none;
-    border-radius: 38px;
-    color: #fff;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
-    font-weight: 700;
-    height: 64px;
-    justify-content: center;
-    text-decoration: none;
-    text-align: center;
-    width: 100%;
-    font-size: 12px;
-    height: 40px;
-    padding: 0 20px;
+.header__item span {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.header__item small {
+  margin-top: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.header__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 40px;
+  padding: 0 20px;
+
+  background-color: #f79214;
+  border-radius: 38px;
+
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: opacity 0.2s;
+}
+
+.header__button:hover {
+  opacity: 0.8;
 }
 
 
-.kv-btn {
-    align-items: center;
-    background-color: #F79214;
-    border: none;
-    border-radius: 38px;
-    color: #fff;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
-    font-weight: 700;
-    height: 64px;
-    justify-content: center;
-    text-decoration: none;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 16px;
+/* First View */
+
+.first-view {
+  position: relative;
+  height: 739px;
+  overflow: hidden;
 }
 
-h1 {
-    color: #333;
-    font-family: "Lato", sans-serif;
-    font-size: 42px;
-    font-weight: 800;
-    line-height: 63px;
-    margin-bottom: 16px;
+.first-view__bg-image {
+  position: absolute;
+  z-index: -1;
 }
 
-.kv-content p {
-    font-size: 12px;
-    line-height: 16px;
+.first-view__bg-image--left {
+  top: -70px;
+  left: 0;
+}
+
+.first-view__bg-image--fill {
+  top: 84px;
+  left: -70px;
+}
+
+.first-view__bg-image--right {
+  right: 0;
+  bottom: 70px;
+}
+
+.first-view__bg-image--main {
+  top: -70px;
+  right: 0;
+  width: 775px;
+}
+
+.first-view__container {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 219px;
+}
+
+.first-view__content {
+  position: relative;
+  width: fit-content;
+}
+
+.first-view__title {
+  margin-top: 0;
+  margin-bottom: 16px;
+
+  color: #333;
+  font-family: "Lato", sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.first-view__badge {
+  position: absolute;
+  top: -105px;
+  right: -150px;
+  width: 204px;
+}
+
+.first-view__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 64px;
+  margin-bottom: 16px;
+
+  background-color: #f79214;
+  border-radius: 38px;
+
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: opacity 0.2s;
+}
+
+.first-view__button:hover {
+  opacity: 0.8;
+}
+
+.first-view__note {
+  margin: 0;
+  font-size: 12px;
+  line-height: 16px;
 }
