@@ -1,11 +1,30 @@
+/* =========================
+   Base
+========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
 body {
   margin: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
+
+
+/* =========================
+   Header
+========================= */
 
 .header {
   width: 100%;
   background-color: #fff;
   box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.05);
+
   font-family:
     "YuGothic",
     "Yu Gothic",
@@ -21,7 +40,12 @@ body {
   padding: 15px 30px;
 }
 
+.header__logo {
+  display: block;
+}
+
 .header__logo img {
+  display: block;
   width: 165px;
 }
 
@@ -35,15 +59,18 @@ body {
   display: flex;
   align-items: center;
   gap: 40px;
-  list-style: none;
+
   margin: 0;
   padding: 0;
+
+  list-style: none;
 }
 
 .header__item a {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   color: #333;
   text-decoration: none;
   white-space: nowrap;
@@ -56,6 +83,7 @@ body {
 
 .header__item small {
   margin-top: 3px;
+
   font-size: 10px;
   font-weight: 700;
   white-space: nowrap;
@@ -86,13 +114,47 @@ body {
 }
 
 
-/* First View */
+/* =========================
+   Hamburger
+========================= */
+
+.header__hamburger {
+  display: none;
+
+  width: 24px;
+  padding: 0;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header__hamburger span {
+  display: block;
+
+  width: 100%;
+  height: 2px;
+
+  margin: 5px 0;
+
+  background-color: #999;
+}
+
+
+/* =========================
+   First View
+========================= */
 
 .first-view {
   position: relative;
+
   height: 739px;
+
   overflow: hidden;
 }
+
+
+/* PC用背景画像 */
 
 .first-view__bg-image {
   position: absolute;
@@ -117,19 +179,34 @@ body {
 .first-view__bg-image--main {
   top: -70px;
   right: 0;
+
   width: 775px;
 }
 
+
+.first-view__whole-image {
+  display: none;
+}
+
+
+/* =========================
+   First View Content
+========================= */
+
 .first-view__container {
+  position: relative;
+
   max-width: 1040px;
+
   margin-left: auto;
   margin-right: auto;
-  position: relative;
+
   padding-top: 219px;
 }
 
 .first-view__content {
   position: relative;
+
   width: fit-content;
 }
 
@@ -138,7 +215,14 @@ body {
   margin-bottom: 16px;
 
   color: #333;
-  font-family: "Lato", sans-serif;
+
+  font-family:
+    "YuGothic",
+    "Yu Gothic",
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    sans-serif;
+
   font-size: 42px;
   font-weight: 800;
   line-height: 1.5;
@@ -146,8 +230,10 @@ body {
 
 .first-view__badge {
   position: absolute;
+
   top: -105px;
   right: -150px;
+
   width: 204px;
 }
 
@@ -158,6 +244,7 @@ body {
 
   width: 100%;
   height: 64px;
+
   margin-bottom: 16px;
 
   background-color: #f79214;
@@ -177,6 +264,142 @@ body {
 
 .first-view__note {
   margin: 0;
+
   font-size: 12px;
   line-height: 16px;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media screen and (max-width: 767px) {
+
+  /* =========================
+     Header
+  ========================= */
+
+  .header__inner {
+    width: 100%;
+    padding: 20px 32px;
+  }
+
+  .header__logo img {
+    width: 150px;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header__hamburger {
+    display: block;
+    width: 24px;
+  }
+
+
+  /* =========================
+     First View
+  ========================= */
+
+  .first-view {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .first-view__bg-image {
+    display: none;
+  }
+
+  .first-view__whole-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 7px;
+  }
+
+
+  /* =========================
+     First View Content
+  ========================= */
+
+  .first-view__container {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+    padding: 0 15px 20px;
+  }
+
+  .first-view__content {
+    position: relative;
+    width: 100%;
+  }
+
+
+  /* =========================
+     Title
+  ========================= */
+
+  .first-view__title {
+    width: fit-content;
+
+    margin-top: 0;
+    margin-bottom: 18px;
+
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+
+  /* =========================
+     Badge
+  ========================= */
+
+  .first-view__badge {
+    display: block;
+    position: absolute;
+
+    top: -20px;
+    left: 240px;
+
+    width: 100px;
+    height: 100px;
+
+    z-index: 10;
+  }
+
+
+  /* =========================
+     Button
+  ========================= */
+
+  .first-view__button {
+    width: 100%;
+    height: 64px;
+
+    margin-bottom: 18px;
+    padding: 0 20px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    white-space: nowrap;
+  }
+
+
+  /* =========================
+     Note
+  ========================= */
+
+  .first-view__note {
+    margin: 0;
+
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
 }
